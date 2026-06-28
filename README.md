@@ -1,50 +1,39 @@
-#
-🌡️ Pastel Temp Card
+[README.md](https://github.com/user-attachments/files/29442070/README.md)
+# 🌡️ Pastel Temp Card
 
 Card Lovelace per Home Assistant con sfondo colorato monocromatico, termometro SVG, media zona, righe stanza con slider e badge umidità.
 
+## Funzionalità
 
-#
-Funzionalità
+- **Sfondo colorato su tutta la card** — un colore scelto via visual editor, nessun override
+- **Panel summary** con termometro SVG + media zona + badge umidità
+- **Barra progresso** proporzionale alla temperatura sulla scala configurata
+- **Righe stanza** con icona MDI + nome + temperatura + slider + umidità
+- **Alert** temperatura e umidità segnalati con testo/icona, **senza cambiare il colore** della card
+- **Visual editor completo** — colore, stanze, entità, icone, soglie alert, scala temp
+- **Trend opzionale** calcolato dalla history di HA
+- **8 palette** disponibili: blue, green, purple, teal, amber, pink, indigo, cyan
 
-    Sfondo colorato su tutta la card — un colore scelto via visual editor, nessun override
+## Installazione via HACS
 
-    Panel summary con termometro SVG + media zona + badge umidità
+1. HACS → **Frontend** → menu ⋮ → *Custom repositories*
+2. URL: `https://github.com/Angelofsin666/pastel-temp-card` — Categoria: **Lovelace**
+3. Installa e riavvia HA
 
-    Barra progresso proporzionale alla temperatura sulla scala configurata
+## Installazione manuale
 
-    Righe stanza con icona MDI + nome + temperatura + slider + umidità
+Copia `pastel-temp-card.js` in `/config/www/` e aggiungi in `configuration.yaml`:
 
-    Alert temperatura e umidità segnalati con testo/icona, senza cambiare il colore della card
-
-    Visual editor completo — colore, stanze, entità, icone, soglie alert, scala temp
-
-    Trend opzionale calcolato dalla history di HA
-
-    8 palette disponibili: blue, green, purple, teal, amber, pink, indigo, cyan
-
-#
-Installazione via HACS
-
-    HACS → Frontend → menu ⋮ → Custom repositories
-
-    URL: https://github.com/Angelofsin666/pastel-temp-card — Categoria: Lovelace
-
-    Installa e riavvia HA
-
-#
-Installazione manuale
-
-Copia pastel-temp-card.js in /config/www/ e aggiungi in configuration.yaml:
-
+```yaml
 lovelace:
   resources:
     - url: /local/pastel-temp-card.js
       type: module
+```
 
-#
-Configurazione YAML
+## Configurazione YAML
 
+```yaml
 type: custom:pastel-temp-card
 title: Piano Terra
 subtitle: Temperature ambiente
@@ -63,39 +52,21 @@ rooms:
     icon: mdi:sofa
     temp_entity: sensor.temperatura_salotto
     hum_entity: sensor.umidita_salotto
+```
 
-#
-Palette colori
-Chiave
-	
-Colore
-blue
-	
-Azzurro
-green
-	
-Verde
-purple
-	
-Viola
-teal
-	
-Verde acqua
-amber
-	
-Ambra
-pink
-	
-Rosa
-indigo
-	
-Indaco
-cyan
-	
-Ciano
-#
-Licenza
+## Palette colori
+
+| Chiave | Colore      |
+|--------|-------------|
+| blue   | Azzurro     |
+| green  | Verde       |
+| purple | Viola       |
+| teal   | Verde acqua |
+| amber  | Ambra       |
+| pink   | Rosa        |
+| indigo | Indaco      |
+| cyan   | Ciano       |
+
+## Licenza
 
 MIT — Angelofsin666
-
-
